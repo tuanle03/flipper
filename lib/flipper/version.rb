@@ -1,7 +1,7 @@
 module Flipper
   VERSION = '1.2.0'.freeze
 
-  REQUIRED_RUBY_VERSION = '2.6'.freeze
+  REQUIRED_RUBY_VERSION = '2.3'.freeze
   NEXT_REQUIRED_RUBY_VERSION = '3.0'.freeze
 
   REQUIRED_RAILS_VERSION = '5.2'.freeze
