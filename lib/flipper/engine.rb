@@ -41,6 +41,10 @@ module Flipper
       # ENV["FLIPPER_CLOUD_TOKEN"] ||= app.credentials.dig(:flipper, :cloud_token)
       # ENV["FLIPPER_CLOUD_SYNC_SECRET"] ||= app.credentials.dig(:flipper, :cloud_sync_secret)
 
+      # Return nil if you don't want to use Rails credentials
+      ENV["FLIPPER_CLOUD_TOKEN"] = nil
+      ENV["FLIPPER_CLOUD_SYNC_SECRET"] = nil
+
       require 'flipper/cloud' if cloud?
 
       Flipper.configure do |config|
