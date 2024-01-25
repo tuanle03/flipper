@@ -130,7 +130,7 @@ module Flipper
           rows_query = features.join(gates, ::Arel::Nodes::OuterJoin)
             .on(features[:key].eq(gates[:feature_key]))
             .project(features[:key].as('feature_key'), gates[:key], gates[:value])
-          gates = @feature_class.connection.select_rows(rows_query)
+          gates = @feature_class.connection.select_rows(rows_query.to_sql)
 
           # group the gates by feature key
           grouped_gates = gates.inject({}) do |hash, (feature_key, key, value)|
